@@ -1,17 +1,23 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Enemy;
+using EnemySpawn;
+using Field;
+using Main;
+using Turret.Weapon;
+using TurretSpawn;
 using UnityEngine;
 
 namespace Runtime
 {
-    public class Runner : MonoBehaviour 
+    public class Runner : MonoBehaviour
     {
         private List<IController> m_Controllers;
-        private bool m_IsRinning = false;
+        private bool m_IsRunning = false;
 
-        private void Update() 
+        private void Update()
         {
-            if (!m_IsRinning) 
+            if (!m_IsRunning)
             {
                 return;
             }
@@ -20,23 +26,33 @@ namespace Runtime
 
         public void StartRunning()
         {
-            CteateAllControllers();
+            CreateAllControllers();
             OnStartControllers();
-            m_IsRinning = true;
+            m_IsRunning = true;
         }
 
         public void StopRunning()
         {
             OnStopControllers();
-            m_IsRinning = false;
+            m_IsRunning = false;
         }
 
-        private void CteateAllControllers()
+        private void CreateAllControllers()
         {
-            m_Controllers = new List<IController>();
-            m_Controllers.Add(new TestController());
+            m_Controllers = new List<IController>
+            {
+                new GridRaycastController(Game.Player.GridHolder),
+                new EnemySpawnController(Game.CurrentLevel.SpawnWavesAsset, Game.Player.Grid),
+                new TurretSpawnController(Game.Player.Grid, Game.Player.TurretMarket),
+                new MovementController(),
+                new EnemyReachController(Game.Player.Grid),
+                new TurretShootController(),
+                new EnemyDeathController(),
+                new LoseController(),
+                new WinController()
+            };
         }
-        
+
         private void OnStartControllers()
         {
             foreach (IController controller in m_Controllers)
@@ -51,14 +67,18 @@ namespace Runtime
                 }
             }
         }
-
+        
         private void TickControllers()
         {
             foreach (IController controller in m_Controllers)
             {
+                if (!m_IsRunning)
+                {
+                    return;
+                }
                 try
                 {
-                    controller.OnTick();
+                    controller.Tick();
                 }
                 catch (Exception e)
                 {
@@ -66,7 +86,7 @@ namespace Runtime
                 }
             }
         }
-
+        
         private void OnStopControllers()
         {
             foreach (IController controller in m_Controllers)

@@ -1,25 +1,25 @@
+﻿using System;
 using Assets;
 using UnityEngine;
 
 namespace Runtime
-{    
-    public class GameStarter : MonoBehaviour 
+{
+    public class GameStarter : MonoBehaviour
     {
         [SerializeField]
-        private RootAsset m_rootAsset;
+        private AssetRoot m_AssetRoot;
 
-        private void Awake() 
+        private void Awake()
         {
-            Game.SetAssetRoot(m_rootAsset);
+            Game.SetAssetRoot(m_AssetRoot);
         }
 
-        private void Update() 
+        private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Game.StartLevel(m_rootAsset.levels[0]);
+                Game.StartLevel(m_AssetRoot.Levels[0]);
             }
         }
     }
-
 }

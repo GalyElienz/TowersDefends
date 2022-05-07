@@ -1,9 +1,11 @@
-namespace Runtime
+﻿namespace Runtime
 {
     public interface IController
     {
         void OnStart();
+        
         void OnStop();
-        void OnTick();
+        
+        void Tick();
     }
 }

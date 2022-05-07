@@ -1,49 +1,52 @@
-using System;
+﻿using System;
 using Assets;
+using Main;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Object = UnityEngine.Object;
 
-namespace Runtime 
+namespace Runtime
 {
     public static class Game
     {
         private static Player s_Player;
-        public static Player player => s_Player;
-
-        private static RootAsset s_rootAsset;
-        public static RootAsset rootAsset => s_rootAsset;
-
+        private static AssetRoot s_AssetRoot;
         private static LevelAsset s_CurrentLevel;
-        public static LevelAsset currentLevel => s_CurrentLevel;
 
-        private static Runner s_runner;
+        private static Runner s_Runner;
+        
+        public static Player Player => s_Player;
+        public static AssetRoot AssetRoot => s_AssetRoot;
+        public static LevelAsset CurrentLevel => s_CurrentLevel;
 
-        public static void SetAssetRoot(RootAsset rootAsset)
+        public static void SetAssetRoot(AssetRoot assetRoot)
         {
-            s_rootAsset = rootAsset;
+            s_AssetRoot = assetRoot;
         }
 
-        public static void StartLevel(LevelAsset levelAsset) 
+        public static void StartLevel(LevelAsset levelAsset)
         {
             s_CurrentLevel = levelAsset;
-            AsyncOperation operation = SceneManager.LoadSceneAsync(levelAsset.sceneAsset.name);
+            AsyncOperation operation = SceneManager.LoadSceneAsync(levelAsset.SceneAsset.name);
             operation.completed += StartPlayer;
         }
 
-        private static void StartPlayer(AsyncOperation operation) 
+        private static void StartPlayer(AsyncOperation operation)
         {
-            if (!operation.isDone) 
+            if (!operation.isDone)
             {
                 throw new Exception("Can't load scene");
             }
             s_Player = new Player();
-            s_runner = UnityEngine.Object.FindObjectOfType<Runner>();
-            s_runner.StartRunning();
+            s_Runner = Object.FindObjectOfType<Runner>();
+            s_Runner.StartRunning();
+
+            SceneManager.LoadScene(AssetRoot.UIScene.name, LoadSceneMode.Additive);
         }
 
-        private static void StopPlayer() 
+        public static void StopPlayer()
         {
-            s_runner.StopRunning();
+            s_Runner.StopRunning();
         }
     }
 }
