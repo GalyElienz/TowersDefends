@@ -7,8 +7,11 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Start.unity
-    guid: a2fb6b8b68de34383b3840630ce1074b
+    guid: 907773e4dc144744094fb7386f1380af
   - enabled: 1
-    path: Assets/Scenes/[1]Level.unity
-    guid: 92e0bacd83dbb40509374b64ee599493
+    path: Assets/Scenes/Level1.unity
+    guid: 28716f4fd612cde48a27fb7c2c228265
+  - enabled: 1
+    path: Assets/Scenes/UI.unity
+    guid: 9acae54868611994bb43677f6ca032bf
   m_configObjects: {}

@@ -1,5 +1,4 @@
-﻿using System;
-using Assets;
+﻿using Assets;
 using UnityEngine;
 
 namespace Runtime
