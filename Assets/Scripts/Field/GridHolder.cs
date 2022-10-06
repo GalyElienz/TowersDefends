@@ -6,18 +6,13 @@ namespace Field
 {
     public class GridHolder : MonoBehaviour
     {
-        [SerializeField]
-        private int m_GridWidth;
-        [SerializeField]
-        private int m_GridHeight;
+        [SerializeField] private int m_GridWidth;
+        [SerializeField] private int m_GridHeight;
 
-        [SerializeField]
-        private Vector2Int m_TargetCoordinate;
-        [SerializeField]
-        private Vector2Int m_StartCoordinate;
+        [SerializeField] private Vector2Int m_TargetCoordinate;
+        [SerializeField] private Vector2Int m_StartCoordinate;
 
-        [SerializeField]
-        private float m_NodeSize;
+        [SerializeField] private float m_NodeSize;
 
         private Grid m_Grid;
 
@@ -29,7 +24,7 @@ namespace Field
 
         public Grid Grid => m_Grid;
 
-        public void CreateGrid()
+        public void CreateGrid()             
         {
             m_Camera = Camera.main;
 
