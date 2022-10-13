@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Field
@@ -37,8 +36,7 @@ namespace Field
                 1f,
                 height * 0.1f);
 
-            m_Offset = transform.position -
-                       (new Vector3(width, 0f, height) * 0.5f);
+            m_Offset = transform.position - (new Vector3(width, 0f, height) * 0.5f);
             m_Grid = new Grid(m_GridWidth, m_GridHeight, m_Offset, m_NodeSize, m_StartCoordinate, m_TargetCoordinate);
         }
 
@@ -53,8 +51,7 @@ namespace Field
                 1f,
                 height * 0.1f);
 
-            m_Offset = transform.position -
-                       (new Vector3(width, 0f, height) * 0.5f);
+            m_Offset = transform.position - (new Vector3(width, 0f, height) * 0.5f);
         }
 
         public void RaycastInGrid()

@@ -1,12 +1,11 @@
-﻿using Assets;
+﻿using AssetsRoot;
 using UnityEngine;
 
 namespace Runtime
 {
     public class GameStarter : MonoBehaviour
     {
-        [SerializeField]
-        private AssetRoot m_AssetRoot;
+        [SerializeField] private AssetRoot m_AssetRoot;
 
         private void Awake()
         {

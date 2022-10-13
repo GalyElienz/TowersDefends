@@ -2,8 +2,7 @@
 
 namespace EnemySpawn
 {
-    [System.Serializable]
-    public class SpawnWave
+    [System.Serializable] public class SpawnWave
     {
         public EnemyAsset EnemyAsset;
         public int Count;

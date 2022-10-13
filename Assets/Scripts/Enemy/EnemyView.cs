@@ -6,8 +6,7 @@ namespace Enemy
 {
     public class EnemyView : MonoBehaviour
     {
-        [SerializeField]
-        private EnemyOvertip m_Overtip;
+        [SerializeField] private EnemyOvertip m_Overtip;
         
         private EnemyData m_Data;
         private IMovementAgent m_MovementAgent;

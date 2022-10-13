@@ -1,13 +1,11 @@
-﻿using System;
-using Enemy;
+﻿using Enemy;
 using UnityEngine;
 
 namespace UI.InGame.Overtips
 {
     public class EnemyOvertip : MonoBehaviour
     {
-        [SerializeField]
-        private RectTransform m_RectTransform;
+        [SerializeField] private RectTransform m_RectTransform;
 
         private float m_StartHealth;
 

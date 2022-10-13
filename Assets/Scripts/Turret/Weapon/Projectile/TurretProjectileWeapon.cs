@@ -10,8 +10,7 @@ namespace Turret.Weapon.Projectile
     {
         private TurretProjectileWeaponAsset m_Asset;
         private TurretView m_View;
-        [CanBeNull]
-        private EnemyData m_ClosestEnemyData;
+        [CanBeNull] private EnemyData m_ClosestEnemyData;
 
         private List<IProjectile> m_Projectiles = new List<IProjectile>();
         

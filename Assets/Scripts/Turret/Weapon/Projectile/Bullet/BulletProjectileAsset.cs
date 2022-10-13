@@ -7,8 +7,7 @@ namespace Turret.Weapon.Projectile.Bullet
     [CreateAssetMenu(menuName = "Assets/Bullet Projectile Asset", fileName = "Bullet Projectile Asset")]
     public class BulletProjectileAsset : ProjectileAssetBase
     {
-        [SerializeField]
-        private BulletProjectile m_BulletPrefab;
+        [SerializeField] private BulletProjectile m_BulletPrefab;
 
         public float Speed;
         public float Damage;

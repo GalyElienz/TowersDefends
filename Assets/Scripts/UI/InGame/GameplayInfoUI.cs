@@ -1,5 +1,4 @@
-﻿using System;
-using Runtime;
+﻿using Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,11 +6,8 @@ namespace UI.InGame
 {
     public class GameplayInfoUI : MonoBehaviour
     {
-        [SerializeField]
-        private Text m_HeathText;
-        
-        [SerializeField]
-        private Text m_MoneyText;
+        [SerializeField] private Text m_HeathText;
+        [SerializeField] private Text m_MoneyText;
 
         private void OnEnable()
         {
