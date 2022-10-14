@@ -7,13 +7,9 @@ namespace Enemy
     {
         private List<EnemyData> m_DiedEnemyDatas = new List<EnemyData>();
         
-        public void OnStart()
-        {
-        }
+        public void OnStart() { }
 
-        public void OnStop()
-        {
-        }
+        public void OnStop() { }
 
         public void Tick()
         {

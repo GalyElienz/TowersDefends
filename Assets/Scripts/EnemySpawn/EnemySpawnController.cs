@@ -27,9 +27,7 @@ namespace EnemySpawn
             m_SpawnRoutine = SpawnRoutine();
         }
 
-        public void OnStop()
-        {
-        }
+        public void OnStop() { }
 
         public void Tick()
         {

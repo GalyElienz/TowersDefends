@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace FXs
@@ -7,13 +6,10 @@ namespace FXs
     [RequireComponent(typeof(AudioSource))]
     public class SoundFX : MonoBehaviour
     {
-        [SerializeField]
-        private AudioClip m_AudioClip;
+        [SerializeField] private AudioClip m_AudioClip;
 
-        [SerializeField, Range(-3f, 3f)]
-        private float m_MinPitch;
-        [SerializeField, Range(-3f, 3f)]
-        private float m_MaxPitch;
+        [SerializeField, Range(-3f, 3f)] private float m_MinPitch;
+        [SerializeField, Range(-3f, 3f)] private float m_MaxPitch;
 
         private void Awake()
         {

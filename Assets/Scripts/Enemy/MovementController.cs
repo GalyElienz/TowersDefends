@@ -4,13 +4,9 @@ namespace Enemy
 {
     public class MovementController : IController
     {
-        public void OnStart()
-        {
-        }
+        public void OnStart() { }
 
-        public void OnStop()
-        {
-        }
+        public void OnStop() { }
 
         public void Tick()
         {

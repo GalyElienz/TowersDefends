@@ -14,13 +14,9 @@ namespace Enemy
             m_TargetNode = grid.GetTargetNode();
         }
         
-        public void OnStart()
-        {
-        }
+        public void OnStart() { }
 
-        public void OnStop()
-        {
-        }
+        public void OnStop() { }
 
         public void Tick()
         {

@@ -4,13 +4,9 @@ namespace Main
 {
     public class WinController : IController
     {
-        public void OnStart()
-        {
-        }
+        public void OnStart() { }
 
-        public void OnStop()
-        {
-        }
+        public void OnStop() { }
 
         public void Tick()
         {
